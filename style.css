@@ -1,0 +1,178 @@
+/* General Styles */
+
+
+.doc {
+    font-family: 'Inter', sans-serif;
+    background-color: #cfedfb; /* Light gray background */
+    margin: 2px;
+    padding: 20px ;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 24px;
+}
+
+h2, h3, h4 {
+    color: #4a4a4a;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Form Styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+    outline: none;
+}
+
+
+/* Button Styles */
+button {
+    background-color: #3b82f6; /* Blue background */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #4a4a4a;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 32px;
+    padding: 16px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 4px;
+    background-color: #f9fafb; /* Light background for sections */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Contact Us css */
+
+  /* Section Title */
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  /* Section Layout */
+  .contact-wrapper {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .contact-wrapper:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Form and Map Containers */
+  .contact-form-container iframe,
+  .map-container iframe {
+    border-radius: 8px;
+    border: none;
+  }
+
+  .contact-form-container {
+    padding-right: 15px;
+  }
+
+  .map-container {
+    padding-left: 15px;
+  }
+
+  /* Responsive padding */
+  @media (max-width: 767px) {
+    .contact-form-container,
+    .map-container {
+      padding: 0;
+    }
+  }

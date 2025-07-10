@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div class ="doc">
+    <div class="container">
+      <!--  Resume Form Home  -->
+      <div class="container my-5">
+        <h1 class="text-center mb-4">Digital Resume Builder</h1>
+        <div>
+          <h3 class="steps">Step for Resume Building</h3>
+          <ul>
+            <li> Step 1 : Fill the form </li>
+            <li> Step 2 : Check the preview</li>
+            <li> Step 3 : Download the Resume </li>
+          </ul>
+        </div>
+        <form id="resume">
+
+
+          <!-- Personal Information -->
+          <div class="mb-3">
+            <label for="fullname" class="form-label">Full name</label>
+            <input type="text" id="fullname" class="form-control" placeholder="Enter Your Full Name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your Email" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Enter your Phone Number">
+          </div>
+          <div class="mb-3">
+            <label for="linkedin" class="form-label">LinkedIn</label>
+            <input type="url" id="linkedin" class="form-control" placeholder="e.g. https://linkedin.com/in/yourname">
+          </div>
+          <!-- Professional Summary  -->
+          <hr class="my-4" />
+          <h4>Professional Summary</h4>
+          <div class="my-3">
+            <label for="summary" class="form-label"></label>
+            <textarea class="form-control" id="summary" rows="4"></textarea>
+          </div>
+          <!-- Work Experience Section -->
+          <hr class="my-4" />
+          <h4>Work Experience</h4>
+          <div id="experience-section">
+            <div class="experience-entry mb-4">
+              <label for="work" class="form-label">Company / Organisation</label>
+              <input type="text" id="work" class="company" placeholder="e.g. Rise Internship" />
+              <label for="role" class="form-label mt-2">Role</label>
+              <input type="text" id="role" class="role" placeholder="e.g. Web Developer Intern" />
+              <label for="duration" class="form-label mt-2">Duration</label>
+              <input type="text" id="duration" class="duration" placeholder="e.g. Jan 2024 - March 2024" />
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary mb-3" onclick="addExperience()">+ Add More Experience</button>
+          <!-- Skills -->
+          <hr class="my-4" />
+          <h4> Skills</h4>
+          <div class="my-3">
+            <label for="skills" class="form-label">List Your Skills</label>
+            <textarea class="form-control" id="skills" rows="4" required></textarea>
+          </div>
+
+
+          <!-- Education Section -->
+          <hr class="my-4" />
+          <h4>Education Details</h4>
+          <div id="education-section">
+            <div class="education-entry mb-4">
+              <label for="degree" class="form-label">Degree</label>
+              <input type="text" id="degree" class="form-control degree" placeholder="e.g. BTech, BCA" required />
+              <label for="institution" class="form-label mt-2">Institution</label>
+              <input type="text" id="institution" class="form-control institution" placeholder="e.g. XYZ University"
+                required />
+              <label for="year" class="form-label mt-2">Year of Graduation</label>
+              <input type="text" id="year" class="form-control year" placeholder="e.g. 2024" required />
+              <label for="percentage" class="form-label mt-2">Percentage / CGPA</label>
+              <input type="text" id="percentage" class="form-control percentage" placeholder="e.g. 8.5 CGPA" required />
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary mb-3" onclick="addEducation()">+ Add More Education</button>
+
+          <!-- Certificate -->
+          <hr class="my-4" />
+          <h4>Certifications / Awards</h4>
+          <div class="my-3">
+            <label for="certificate" class="form-label">Certifications / Awards</label>
+            <textarea class="form-control" id="certificate" rows="4" placeholder=" Achievements, Awards, Courses" required></textarea>
+          </div>
+
+          
+          <!-- Projects Section -->
+          <hr class="my-4" />
+          <h4>Projects</h4>
+          <div id="projects-section">
+            <div class="project-entry mb-4">
+              <label for="project-title" class="form-label">Project Title</label>
+              <input type="text" id="project-title" class="form-control project-title"
+                placeholder="e.g. Resume Builder">
+
+              <label for="link" class="form-label mt-2">Project Link</label>
+              <input type="url" id="link" class="form-control project-link"
+                placeholder="e.g. https://github.com/username/project">
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary mb-4" onclick="addProject()">+ Add More Project</button>
+        </form>
+
+        <!-- Resume Preview Modal -->
+        
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="previewModalLabel">Resume Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="resume-content">
+        <!-- Resume content will be injected here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="generatePDF()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- Download Button -->
+
+       
+<div class="d-flex justify-content-center gap-3 mt-4 mb-5">
+ <button type="button" class="btn btn-primary" onclick="previewResume()">Preview Resume</button>
+
+  <button type="button" class="btn btn-success" onclick="generatePDF()">Download Resume</button>
+  <button type="button" class="btn btn-danger" onclick="resetForm()">Reset Resume</button>
+</div>
+
+</div>
+      </div>
+  
+    <!-- Hidden div to generate PDF -->
+    <div id="resume-content" style="display: none;"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script> -->
+    <script src="html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
