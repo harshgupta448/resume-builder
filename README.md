@@ -1,4 +1,4 @@
-# Digital Resume Builder
+# Digital Resume-Builder
 
 This is a responsive Resume Builder web application that lets users:
 - Fill personal, educational, and professional info
@@ -45,3 +45,4 @@ This is a responsive Resume Builder web application that lets users:
 ---
 
 © 2025 Harsh Gupta
+
